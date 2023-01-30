@@ -35,3 +35,11 @@ https://www.themoviedb.org/
    constructor( private http: HttpClientModule )
 
 ```
+## 🎓Generar interfaces
+
+```
+   Necesito extensión (Paste JSON as Code) ó (https://app.quicktype.io/)
+   Crear archivo interfaces  y dentro un index.ts
+   En el mismo fichero presionamos Ctrl + Shift + v
+   Ponemos nombre + intro
+```
