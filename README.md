@@ -43,3 +43,28 @@ https://www.themoviedb.org/
    En el mismo fichero presionamos Ctrl + Shift + v
    Ponemos nombre + intro
 ```
+
+## 📸 Para visualizar imagenes
+
+```
+1º Creamos carpeta/modulo pipes y creamos un pipe dentro del pipes
+ionic g m pipes
+ionic g pipe pipes/imagen
+2º En pipes.module.ts hago un export:
+exports:[
+    ImagenPipe
+  ]
+3º Realizamos la lógica en imagen.pipe.ts
+4º Lo import en donde queramos visualizarlo tab1.module.ts:
+ import { PipesModule } from "../pipes/pipes.module";
+5º OJO ❗❗ para poder visualizarlo en el html:
+ <ion-card>
+    <ion-img [src]="i. backdrop_path | imagen"></ion-img>
+ </ion-card>
+ 
+
+```
+
+
+
+
