@@ -19,7 +19,8 @@ https://www.themoviedb.org/
  5º La petición entera seria: 
  https://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22&api_key=f76b1a94f37a496866a10143a5baf98e                
 6º Realizamos en Postman las pruebas y vemos traducción:
-![postman](https://user-images.githubusercontent.com/71487857/215449453-3e2bcb06-cdfe-4b4e-b38b-3fe01cbbe18f.png)
+![postman](https://user-images.githubusercontent.com/71487857/215481676-86fcd1b0-92e5-4673-b08a-2b913b31c83b.png)
+
 
 ## 🎱Crear servicio para interactuar con API
 
