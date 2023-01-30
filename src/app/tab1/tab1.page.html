@@ -1,6 +1,12 @@
-<ion-content [fullscreen]="true">
-
- <ion-slides [options]="options">
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col>
+        <h3>Peliculas Nuevas</h3>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- <ion-slides [options]="options">
   <ion-slide *ngFor="let i of pelisNews">
   
    <ion-card>
@@ -8,5 +14,18 @@
    </ion-card>
 
   </ion-slide>
- </ion-slides>
+ </ion-slides> -->
+  <app-slides [pelis]="pelisNews"></app-slides>
+
+
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col>
+        <h3>Cartelera</h3>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <app-poster [posters]="pelisNews"></app-poster>
+
 </ion-content>

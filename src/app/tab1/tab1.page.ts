@@ -9,11 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Tab1Page implements OnInit {
   pelisNews: Pelis[] = [];
-
+  /* 
   options = {
     slidesPerView: 1.2,
     freeMode: true,
-  };
+  }; */
 
   constructor(private moviesService: MoviesService) {}
 
