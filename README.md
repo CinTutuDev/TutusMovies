@@ -13,4 +13,7 @@
 ## API TMDB
 ```
 https://www.themoviedb.org/
+1º Para coger la API ir a editar perfil
+2º API
+3º Solicitar API
 ```
