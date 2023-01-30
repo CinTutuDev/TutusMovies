@@ -20,3 +20,18 @@ https://www.themoviedb.org/
  https://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22&api_key=f76b1a94f37a496866a10143a5baf98e                
 6º Realizamos en Postman las pruebas y vemos traducción:
 ![postman](https://user-images.githubusercontent.com/71487857/215449453-3e2bcb06-cdfe-4b4e-b38b-3fe01cbbe18f.png)
+
+## 🎱Crear servicio para interactuar con API
+
+```
+*Crear servicio sin archivo de prueba
+   ionic g s services/movies --skip-tests
+
+*Para hacer la petición creo en app.module el modulo para peticiones
+   import { HttpClientModule } from "@angular/common/http";
+
+*En services 'apiNews' hago la importación
+   import { HttpClientModule } from '@angular/common/http';
+   constructor( private http: HttpClientModule )
+
+```
