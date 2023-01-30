@@ -18,4 +18,5 @@ https://www.themoviedb.org/
 1º Para coger la API ir a editar perfil
 2º API
 3º Solicitar API
+4º https://www.themoviedb.org/documentation/api/discover
 ```
