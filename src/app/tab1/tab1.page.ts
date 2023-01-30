@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Tab1Page implements OnInit {
   pelisNews: Pelis[] = [];
+  pelisPopulares: Pelis[]= [];
   /* 
   options = {
     slidesPerView: 1.2,
@@ -22,5 +23,10 @@ export class Tab1Page implements OnInit {
       console.log('Resultados', result.results);
       this.pelisNews = result.results;
     });
+
+    this.moviesService.getPopulares().subscribe((resul)=>{
+      console.log('Populares', resul);
+      this.pelisPopulares = resul.results
+    })
   }
 }
