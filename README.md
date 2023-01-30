@@ -19,4 +19,6 @@ https://www.themoviedb.org/
 2º API
 3º Solicitar API
 4º https://www.themoviedb.org/documentation/api/discover
+5º La petición entera seria:
+https://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22&api_key=f76b1a94f37a496866a10143a5baf98e
 ```
