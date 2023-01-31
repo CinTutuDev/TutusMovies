@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Tab1Page implements OnInit {
   pelisNews: Pelis[] = [];
-  pelisPopulares: Pelis[]= [];
+  pelisPopulares: Pelis[] = [];
   /* 
   options = {
     slidesPerView: 1.2,
@@ -24,9 +24,17 @@ export class Tab1Page implements OnInit {
       this.pelisNews = result.results;
     });
 
-    this.moviesService.getPopulares().subscribe((resul)=>{
-      console.log('Populares', resul);
-      this.pelisPopulares = resul.results
-    })
+    this.getPopulares();
+  }
+  cargarMas(){
+    this.getPopulares();
+  }
+
+  getPopulares() {
+    this.moviesService.getPopulares().subscribe((resul) => {
+     /*  this.pelisPopulares.push(...resul.results) */
+      this.pelisPopulares = this.pelisPopulares.concat(resul.results);
+      this.pelisPopulares = resul.results;
+    });
   }
 }

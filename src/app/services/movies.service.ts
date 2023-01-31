@@ -12,6 +12,9 @@ const key = environment.apiKey;
   providedIn: 'root',
 })
 export class MoviesService {
+
+  private popularPage = 0;
+
   constructor(private http: HttpClient) {}
 
   private ejecutarQuery<T>(query: string) {
@@ -21,7 +24,10 @@ export class MoviesService {
   }
 
   getPopulares(){
-    const query = '/discover/movie?sort_by=popularity.desc';
+
+    this.popularPage ++;
+
+    const query = `/discover/movie?sort_by=popularity.desc&page=${this.popularPage}`;
     return this.ejecutarQuery<ResultTMDB>(query);
   }
 

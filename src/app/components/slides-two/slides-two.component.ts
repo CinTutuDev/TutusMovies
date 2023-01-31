@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { Pelis } from 'src/app/interface/interfaces';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-slides-two',
@@ -9,10 +10,13 @@ import { Pelis } from 'src/app/interface/interfaces';
 export class SlidesTwoComponent implements OnInit {
 
   @Input() postersTwo: Pelis[] = [];
-
+  @Output() cargarMas = new EventEmitter();
   constructor() {}
+  onClick(){
+   this.cargarMas.emit();
+  }
 
-  options : any = {
+  options = {
     slidesPerView: 3.3,
     freeMode: true,
     slidesPerColumn: 1,
@@ -20,5 +24,6 @@ export class SlidesTwoComponent implements OnInit {
     spaceBetween: -10
   };
   
+
   ngOnInit() {}
 }
