@@ -1,4 +1,4 @@
-import { ResultTMDB } from './../interface/interfaces';
+import { ResultTMDB, DetallePelis } from './../interface/interfaces';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
@@ -19,6 +19,7 @@ export class MoviesService {
   private ejecutarQuery<T>(query: string) {
     query = url + query;
     query += `&api_key=${key}&language=es&include_image_lenguage=es`;
+    console.log(query);
     return this.http.get<T>(query);
   }
 
@@ -37,4 +38,9 @@ export class MoviesService {
       `/discover/movie?primary_release_date.gte=${startOfMonth}&primary_release_date.lte=${endOfMonth}`
     );
   }
+
+  getDetallePeli(id: number){
+    return this.ejecutarQuery<DetallePelis>(`/movie/${id}?a=1`);
+  }
+
 }
