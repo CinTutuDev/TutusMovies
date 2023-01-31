@@ -12,7 +12,6 @@ const key = environment.apiKey;
   providedIn: 'root',
 })
 export class MoviesService {
-
   private popularPage = 0;
 
   constructor(private http: HttpClient) {}
@@ -23,9 +22,8 @@ export class MoviesService {
     return this.http.get<T>(query);
   }
 
-  getPopulares(){
-
-    this.popularPage ++;
+  getPopulares() {
+    this.popularPage++;
 
     const query = `/discover/movie?sort_by=popularity.desc&page=${this.popularPage}`;
     return this.ejecutarQuery<ResultTMDB>(query);
@@ -34,7 +32,7 @@ export class MoviesService {
   getCartelera() {
     const startOfMonth = moment().startOf('month').format('YYYY-MM-DD');
     const endOfMonth = moment().endOf('month').format('YYYY-MM-DD');
-    console.log(startOfMonth, '\n',endOfMonth);
+    console.log(startOfMonth, '\n', endOfMonth);
     return this.ejecutarQuery<ResultTMDB>(
       `/discover/movie?primary_release_date.gte=${startOfMonth}&primary_release_date.lte=${endOfMonth}`
     );

@@ -8,12 +8,13 @@ import { EventEmitter } from '@angular/core';
   styleUrls: ['./slides-two.component.scss'],
 })
 export class SlidesTwoComponent implements OnInit {
-
   @Input() postersTwo: Pelis[] = [];
   @Output() cargarMas = new EventEmitter();
+
   constructor() {}
-  onClick(){
-   this.cargarMas.emit();
+
+  onClick() {
+    this.cargarMas.emit();
   }
 
   options = {
@@ -21,9 +22,8 @@ export class SlidesTwoComponent implements OnInit {
     freeMode: true,
     slidesPerColumn: 1,
     slidesPerColumnFill: 'row',
-    spaceBetween: -10
+    spaceBetween: -10,
   };
-  
 
   ngOnInit() {}
 }

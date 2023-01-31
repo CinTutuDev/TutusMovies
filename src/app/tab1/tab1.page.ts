@@ -26,15 +26,15 @@ export class Tab1Page implements OnInit {
 
     this.getPopulares();
   }
-  cargarMas(){
+  cargarMas() {
     this.getPopulares();
   }
 
   getPopulares() {
     this.moviesService.getPopulares().subscribe((resul) => {
-     /*  this.pelisPopulares.push(...resul.results) */
+      /*  this.pelisPopulares.push(...resul.results) */
       this.pelisPopulares = this.pelisPopulares.concat(resul.results);
-      this.pelisPopulares = resul.results;
+      /* this.pelisPopulares = resul.results; */
     });
   }
 }
