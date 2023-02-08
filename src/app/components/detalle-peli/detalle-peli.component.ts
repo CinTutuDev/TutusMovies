@@ -11,7 +11,7 @@ export class DetallePeliComponent implements OnInit {
   @Input() id: any;
 
   peli: DetallePelis | any = {};
-
+  parrafo = 150;
   constructor(private moviesService: MoviesService) {}
 
   ngOnInit() {
