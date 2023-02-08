@@ -10,7 +10,7 @@ import { MoviesService } from '../../services/movies.service';
 export class DetallePeliComponent implements OnInit {
   @Input() id: any;
 
-  peli: DetallePelis | undefined = {};
+  peli: DetallePelis | any = {};
 
   constructor(private moviesService: MoviesService) {}
 
