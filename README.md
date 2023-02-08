@@ -66,6 +66,26 @@ exports:[
 
 ```
 
+## 🧲 Para coger los endpoints de la API
+* URL [EndPoints movies](https://developers.themoviedb.org/3/movies/get-movie-details)
+```
+ /movie/{movie_id}
+ 
+ Quedando así:
+    getDetallePeli(id: number){
+    return this.ejecutarQuery<DetallePelis>(`/movie/${id}?a=1`);
+  }
+```
+* URL [EndPoints actores](https://developers.themoviedb.org/3/movies/get-movie-credits)
+```
+/movie/{movie_id}/credits
+
+ Quedando así:
+  this.moviesService.getDetalleActores(this.id).subscribe((res) => {
+      console.log('ID Actores', res);
+    });
+```
+
 
 
 
