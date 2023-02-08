@@ -66,6 +66,16 @@ exports:[
 
 ```
 
+## Para coger los endpoints de la API
+* URL [EndPoints movies](https://developers.themoviedb.org/3/movies/get-movie-details)
+```
+ /movie/{movie_id}
+```
+* URL [EndPoints actores](https://developers.themoviedb.org/3/movies/get-movie-credits)
+```
+/movie/{movie_id}/credits
+```
+
 
 
 
