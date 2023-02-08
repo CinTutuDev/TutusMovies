@@ -5,21 +5,24 @@ import { IonicModule } from '@ionic/angular';
 import { SlidesComponent } from './slides/slides.component';
 import { PosterComponent } from './poster/poster.component';
 import { SlidesTwoComponent } from './slides-two/slides-two.component';
-import { ModalComponent } from './modal/modal.component';
+import { DetallePeliComponent } from './detalle-peli/detalle-peli.component';
 
 @NgModule({
-  entryComponents: [ModalComponent],
+  //Se pone para acceder a todos los atributos results desde cualquier componente con :
+  // import { Component, Input, OnInit } from '@angular/core';
+  //@Input() id: any;
+  entryComponents: [DetallePeliComponent],
   declarations: [
     SlidesComponent,
     PosterComponent,
     SlidesTwoComponent,
-    ModalComponent,
+    DetallePeliComponent,
   ],
   exports: [
     SlidesComponent,
     PosterComponent,
     SlidesTwoComponent,
-    ModalComponent,
+    DetallePeliComponent,
   ],
   imports: [CommonModule, IonicModule, PipesModule],
 })

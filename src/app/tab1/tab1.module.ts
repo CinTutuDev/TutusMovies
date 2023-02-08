@@ -9,6 +9,7 @@ import { Tab1PageRoutingModule } from './tab1-routing.module';
 import { PipesModule } from "../pipes/pipes.module";
 import { ComponentsModule } from '../components/components.module';
 
+
 @NgModule({
   imports: [
     IonicModule,

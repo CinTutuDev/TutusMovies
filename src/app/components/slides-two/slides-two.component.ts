@@ -1,8 +1,9 @@
+import { DetallePeliComponent } from './../detalle-peli/detalle-peli.component';
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { Pelis } from 'src/app/interface/interfaces';
 import { EventEmitter } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { ModalComponent } from '../modal/modal.component';
+
 
 @Component({
   selector: 'app-slides-two',
@@ -31,7 +32,7 @@ export class SlidesTwoComponent implements OnInit {
 
   async detailPeli(id: number) {
     const modal = await this.modalCtrl.create({
-      component: ModalComponent,
+      component: DetallePeliComponent,
       componentProps: { id },
     });
     modal.present();
