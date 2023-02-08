@@ -81,9 +81,9 @@ exports:[
 /movie/{movie_id}/credits
 
  Quedando así:
- getDetalleActores(id: number){
-    return this.ejecutarQuery<DetallePelis>(`/movie/${id}/credits?a=1`);
-  }
+  this.moviesService.getDetalleActores(this.id).subscribe((res) => {
+      console.log('ID Actores', res);
+    });
 ```
 
 
