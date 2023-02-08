@@ -19,7 +19,7 @@ export class MoviesService {
   private ejecutarQuery<T>(query: string) {
     query = url + query;
     query += `&api_key=${key}&language=es&include_image_lenguage=es`;
-    console.log(query);
+    /* console.log(query); */
     return this.http.get<T>(query);
   }
 
@@ -41,6 +41,9 @@ export class MoviesService {
 
   getDetallePeli(id: number){
     return this.ejecutarQuery<DetallePelis>(`/movie/${id}?a=1`);
+  }
+  getDetalleActores(id: number){
+    return this.ejecutarQuery<DetallePelis>(`/movie/${id}/credits?a=1`);
   }
 
 }
