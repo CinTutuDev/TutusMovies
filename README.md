@@ -79,6 +79,11 @@ exports:[
 * URL [EndPoints actores](https://developers.themoviedb.org/3/movies/get-movie-credits)
 ```
 /movie/{movie_id}/credits
+
+ Quedando así:
+ getDetalleActores(id: number){
+    return this.ejecutarQuery<DetallePelis>(`/movie/${id}/credits?a=1`);
+  }
 ```
 
 
