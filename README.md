@@ -85,7 +85,21 @@ exports:[
       console.log('ID Actores', res);
     });
 ```
+##  🖲 Para crear botón de volver a inicio necesito:
 
+```
+import { ModalController } from '@ionic/angular';
+```
+* Inyectarlo en el constructor
+``` 
+private modalCtrl: ModalController
+```
+* Y simplemente con esto vuelve a inicio:
+```
+   inicio(){
+    this.modalCtrl.dismiss();
+  }
+```
 
 
 
