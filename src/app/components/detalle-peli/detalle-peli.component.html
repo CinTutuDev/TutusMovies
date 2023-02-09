@@ -81,10 +81,16 @@
     </ion-row>
   </ion-grid>
 
-  <ion-slides >
+  <ion-slides [options]="optionActores">
     <ion-slide *ngFor="let actor of actores">
-      <ion-card class="actor-card" >
-        <ion-img [src]="actor.profile_path | imagen"></ion-img>
+
+      <ion-card class="card-actor" >
+        <!-- Si no existe la img mando por defecto una -->
+        <ion-img *ngIf="!actor.profile_path" src="/assets/icon/camara250px.png"></ion-img>
+        <!-- si existe la saco -->
+        <ion-img *ngIf="actor.profile_path" [src]="actor.profile_path | imagen"></ion-img>
+
+        <ion-label class="actor-name">{{actor.name}}</ion-label>
       </ion-card>
     </ion-slide>
   </ion-slides>

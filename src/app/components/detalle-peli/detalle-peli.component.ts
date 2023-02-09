@@ -13,6 +13,13 @@ export class DetallePeliComponent implements OnInit {
   peli: DetallePelis | any = {};
   actores: Cast[] | any = [];
   parrafo = 150;
+
+  optionActores = {
+    slidesPerView: 3.3,
+    freeMode: true,
+    spaceBetween: 0
+  };
+
   constructor(private moviesService: MoviesService) {}
 
   ngOnInit() {
@@ -26,7 +33,8 @@ export class DetallePeliComponent implements OnInit {
     this.moviesService.getDetalleActores(this.id).subscribe((res) => {
       console.log('ID Actores', res);
       this.actores = res.cast;
-    
     });
   }
+
+
 }
