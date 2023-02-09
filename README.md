@@ -81,10 +81,34 @@ exports:[
 /movie/{movie_id}/credits
 
  Quedando así:
+  En service:
+   getDetalleActores(id: number){
+    return this.ejecutarQuery<DetallePelis>(`/movie/${id}/credits?a=1`);
+  }
+  Llamada en ts:
   this.moviesService.getDetalleActores(this.id).subscribe((res) => {
       console.log('ID Actores', res);
     });
 ```
+* URL [EndPoints Buscar Pelis](https://developers.themoviedb.org/3/search/search-movies)
+
+```
+/search/movie
+
+  Quedando:
+   En service:
+   getBuscarPeli(texto: string){
+    return this.ejecutarQuery(`/search/movie?query=${texto}`)
+  }
+  Llamada en ts:
+   buscador(event:any){
+    console.log(event);
+    this.movieService.getBuscarPeli(queryValue).subscribe( result =>{
+      console.log(result);
+    })
+  }
+```
+
 ##  🖲 Para crear botón de volver a inicio necesito:
 
 ```
