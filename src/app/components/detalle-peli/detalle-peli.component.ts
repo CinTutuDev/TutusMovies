@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Cast, DetallePelis } from 'src/app/interface/interfaces';
 import { MoviesService } from '../../services/movies.service';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-detalle-peli',
@@ -17,10 +18,14 @@ export class DetallePeliComponent implements OnInit {
   optionActores = {
     slidesPerView: 3.3,
     freeMode: true,
-    spaceBetween: 0
+    spaceBetween: -5,
+    /*  stretch: 0,
+    depth: 100,
+    modifier: 1,
+    slideShadows: true, */
   };
 
-  constructor(private moviesService: MoviesService) {}
+  constructor(private moviesService: MoviesService, private modalCtrl: ModalController) {}
 
   ngOnInit() {
     /* console.log('el ID', this.id); */
@@ -36,5 +41,10 @@ export class DetallePeliComponent implements OnInit {
     });
   }
 
+  //para regresar a inicio necesito el ModalControler
+  inicio(){
+    this.modalCtrl.dismiss();
+  }
 
+  favoritos(){}
 }

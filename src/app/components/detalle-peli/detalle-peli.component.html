@@ -83,17 +83,38 @@
 
   <ion-slides [options]="optionActores">
     <ion-slide *ngFor="let actor of actores">
-
-      <ion-card class="card-actor" >
+      <ion-card class="card-actor">
         <!-- Si no existe la img mando por defecto una -->
-        <ion-img *ngIf="!actor.profile_path" src="/assets/icon/camara250px.png"></ion-img>
+        <ion-img
+          *ngIf="!actor.profile_path"
+          src="/assets/icon/camara250px.png"
+        ></ion-img>
         <!-- si existe la saco -->
-        <ion-img *ngIf="actor.profile_path" [src]="actor.profile_path | imagen"></ion-img>
+        <ion-img
+          *ngIf="actor.profile_path"
+          [src]="actor.profile_path | imagen"
+        ></ion-img>
 
-        <ion-label class="actor-name">{{actor.name}}</ion-label>
+        <ion-label class="actor-name">{{ actor.name }}</ion-label>
       </ion-card>
     </ion-slide>
   </ion-slides>
 
+  <ion-footer class="ion-no-border">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button (click)="inicio()">
+          <ion-label>Inicio</ion-label>
+          <ion-icon slot="start" name="arrow-back-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
 
+      <ion-buttons slot="end">
+        <ion-button (click)="favoritos()">
+          <ion-label>Favoritos</ion-label>
+          <ion-icon slot="end" name="star-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-footer>
 </ion-content>
