@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MoviesService } from '../services/movies.service';
 
 @Component({
   selector: 'app-tab2',
@@ -13,12 +14,15 @@ export class Tab2Page {
 
   buscaText = '';
 
-  constructor() {}
+  constructor( private movieService: MoviesService ) {}
 
   
   buscador(event:any){
     console.log(event);
     const queryValue = event.target.value.toLowerCase();
-    this.results = this.ideas.filter(d => d.toLowerCase().indexOf(queryValue) > -1);
+    /* this.results = this.ideas.filter(d => d.toLowerCase().indexOf(queryValue) > -1); */
+    this.movieService.getBuscarPeli(queryValue).subscribe( result =>{
+      console.log(result);
+    })
   }
 }
