@@ -1,17 +1,39 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <ion-title> Buscar Pelis </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-toolbar>
+  <ion-searchbar
+    placeholder="Buscar Peli..."
+    animated="true"
+    inputmode="decimal"
+    type="decimal"
+    (ionChange)="buscador($event)"
+    [debounce]="700"
+    sshow-cancel-button="always"
+    [value]="buscaText"
+  ></ion-searchbar>
+</ion-toolbar>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <ion-spinner name="lines-sharp" color="warning"> </ion-spinner>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Ideas</ion-label>
+      <ion-button>See All</ion-button>
+    </ion-list-header>
+
+    <ion-item *ngFor="let result of results" (click)="buscaText = result">
+      <ion-label color="primary">{{result}}</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
