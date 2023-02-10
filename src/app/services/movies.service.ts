@@ -46,8 +46,11 @@ export class MoviesService {
     return this.ejecutarQuery<DetallePelis>(`/movie/${id}/credits?a=1`);
   }
 
-  getBuscarPeli(texto: string){
+  /* getBuscarPeli(texto: string){
     return this.ejecutarQuery(`/search/movie?query=${texto}`)
-  }
+  } */
+  buscarPeliculas( texto: any ) {
+    return this.ejecutarQuery(`/search/movie?query=${ texto }`);
 
+  } 
 }

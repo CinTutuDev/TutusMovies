@@ -2,26 +2,26 @@
 
 export interface ResultTMDB {
  page:          number;
- results:       Pelis[];
+ results: Pelis[];
  total_pages:   number;
  total_results: number;
 }
 
 export interface Pelis {
- adult:             boolean;
- backdrop_path:     string;
- genre_ids:         number[];
- id:                number;
+ vote_count: number;
+ id: number;
+ video: boolean;
+ vote_average: number;
+ title: string;
+ popularity: number;
+ poster_path: string;
  original_language: string;
- original_title:    string;
- overview:          string;
- popularity:        number;
- poster_path:       string;
- release_date:      string;
- title:             string;
- video:             boolean;
- vote_average:      number;
- vote_count:        number;
+ original_title: string;
+ genre_ids: number[];
+ backdrop_path: string;
+ adult: boolean;
+ overview: string;
+ release_date: string;
 }
 
 
