@@ -49,7 +49,7 @@ export class MoviesService {
   /* getBuscarPeli(texto: string){
     return this.ejecutarQuery(`/search/movie?query=${texto}`)
   } */
-  buscarPeliculas( texto: any ) {
+  buscarPeliculas( texto: string ) {
     return this.ejecutarQuery(`/search/movie?query=${ texto }`);
 
   } 

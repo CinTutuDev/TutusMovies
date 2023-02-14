@@ -37,7 +37,7 @@ export class DetallePeliComponent implements OnInit {
     /* console.log('el ID', this.id); */
     this.moviesService.getDetalleActores(this.id).subscribe((res) => {
       console.log('ID Actores', res);
-      this.actores = res.cast;
+      this.actores = res['cast'];
     });
   }
 

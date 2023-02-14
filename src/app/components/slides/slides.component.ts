@@ -10,8 +10,8 @@ import { DetallePeliComponent } from '../detalle-peli/detalle-peli.component';
   styleUrls: ['./slides.component.scss'],
 })
 export class SlidesComponent implements OnInit {
+/*   @Input() pelis: Pelis[] = []; */
   @Input() pelis: Pelis[] = [];
-
   options = {
     slidesPerView: 1.2,
     freeMode: true,
