@@ -29,15 +29,15 @@ export class DetallePeliComponent implements OnInit {
 
   ngOnInit() {
     /* console.log('el ID', this.id); */
-    this.moviesService.getDetallePeli(this.id).subscribe((res) => {
-      console.log('ID Pelis', res);
-      this.peli = res;
+    this.moviesService.getDetallePeli(this.id).subscribe( resp => {
+      console.log( resp );
+      this.peli = resp;
     });
 
     /* console.log('el ID', this.id); */
     this.moviesService.getDetalleActores(this.id).subscribe((res) => {
       console.log('ID Actores', res);
-      this.actores = res['cast'];
+      this.actores = res.cast;
     });
   }
 
