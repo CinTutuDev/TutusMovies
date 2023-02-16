@@ -1,3 +1,4 @@
+import { StorageService } from './../../services/storage.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { Cast, DetallePelis } from 'src/app/interface/interfaces';
 import { MoviesService } from '../../services/movies.service';
@@ -25,12 +26,16 @@ export class DetallePeliComponent implements OnInit {
     slideShadows: true, */
   };
 
-  constructor(private moviesService: MoviesService, private modalCtrl: ModalController) {}
+  constructor(
+    private moviesService: MoviesService,
+    private modalCtrl: ModalController,
+    private storageServide: StorageService
+  ) {}
 
   ngOnInit() {
     /* console.log('el ID', this.id); */
-    this.moviesService.getDetallePeli(this.id).subscribe( resp => {
-      console.log( resp );
+    this.moviesService.getDetallePeli(this.id).subscribe((resp) => {
+      console.log(resp);
       this.peli = resp;
     });
 
@@ -42,9 +47,11 @@ export class DetallePeliComponent implements OnInit {
   }
 
   //para regresar a inicio necesito el ModalControler
-  inicio(){
+  inicio() {
     this.modalCtrl.dismiss();
   }
 
-  favoritos(){}
+  favoritos() {
+    this.storageServide.getGuardoPeli(this.peli);
+  }
 }
