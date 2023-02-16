@@ -143,12 +143,16 @@ private modalCtrl: ModalController
 
 @NgModule({
   imports: [
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    OJO ❗❗ si sale error reiniciar code❗❗ 
   ]
 })
 export class AppModule { }
 
 *Creo un servicio:
+
+ionic g s services/storage --skip-tests
+
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
 
@@ -157,22 +161,27 @@ import { Storage } from '@ionic/storage-angular';
 })
 export class StorageService {
   private _storage: Storage | null = null;
+  pelis: DetallePelis[] | any = [];
 
-  constructor(private storage: Storage) {
-    this.init();
-  }
+  constructor(private storage: Storage) {}
 
-  async init() {
-    const storage = await this.storage.create();
-    this._storage = storage;
+  /* llamo a la interface para guardar peli */
+  getGuardoPeli(peli: DetallePelis) {
+    this.pelis.push(peli);
+    /* guardamos en el array pelis  y grabamos/guardamos en el storage */
+    this._storage?.set('peliculas', this.pelis);
+    console.log(this.pelis);
   }
- {...}
 }
 
+
 *Inyectamos el servicio
-src\app\components\article\article.component.ts
-import { StorageService } from '../../services/storage.service';
-{...}
+src\app\components\detalle-peli\detalle-peli.component.ts
+
+import { StorageService } from './../../services/storage.service';
+ favoritos() {
+    this.storageServide.getGuardoPeli(this.peli)
+  }
 ```
 
 
