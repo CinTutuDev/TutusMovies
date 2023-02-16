@@ -39,18 +39,15 @@ export class MoviesService {
     );
   }
 
-  getDetallePeli(id: number){
+  getDetallePeli(id: number) {
     return this.ejecutarQuery<DetallePelis>(`/movie/${id}?a=1`);
   }
-  getDetalleActores(id: number){
+  /* https://developers.themoviedb.org/3/movies/get-movie-details */
+  getDetalleActores(id: number) {
     return this.ejecutarQuery<DetallePelis>(`/movie/${id}/credits?a=1`);
   }
-
-  /* getBuscarPeli(texto: string){
-    return this.ejecutarQuery(`/search/movie?query=${texto}`)
-  } */
-  buscarPeliculas( texto: string ) {
-    return this.ejecutarQuery(`/search/movie?query=${ texto }`);
-
-  } 
+  /* https://developers.themoviedb.org/3/search/search-movies */
+  getBuscarPeliculas(texto: string) {
+    return this.ejecutarQuery(`/search/movie?query=${texto}`);
+  }
 }

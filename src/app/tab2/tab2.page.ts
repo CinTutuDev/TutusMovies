@@ -9,7 +9,7 @@ import { DetallePeliComponent } from '../components/detalle-peli/detalle-peli.co
   styleUrls: ['tab2.page.scss'],
 })
 export class Tab2Page {
- /*  @Input() pelis: Pelis[] = []; */
+  /*  @Input() pelis: Pelis[] = []; */
   textoBuscar = '';
   buscando = false;
   peliculas: Pelis[] | any = [];
@@ -38,7 +38,7 @@ export class Tab2Page {
     this.buscando = true;
 
     this.moviesService
-      .buscarPeliculas(valor)
+      .getBuscarPeliculas(valor)
       //El error unknown resuelto con :any
       .subscribe((res: any) => {
         console.log(res);
