@@ -124,6 +124,64 @@ private modalCtrl: ModalController
     this.modalCtrl.dismiss();
   }
 ```
+## ![descarga](https://user-images.githubusercontent.com/71487857/214578135-16d1a768-8961-4099-82ce-43045983b5f6.png)@ionic/storage
 
+```
+*Dar funcionalidad al btn de favoritos guardando y mostrando con storage
+
+ URL
+ https://github.com/ionic-team/ionic-storage
+
+ *Instalación
+ npm install @ionic/storage
+
+ *Instalar biblioteca Angular
+ npm install @ionic/storage-angular
+
+ *Como es un módulo va en los imports:
+ import { IonicStorageModule } from '@ionic/storage-angular';
+
+@NgModule({
+  imports: [
+    IonicStorageModule.forRoot(),
+    OJO ❗❗ si sale error reiniciar code❗❗ 
+  ]
+})
+export class AppModule { }
+
+*Creo un servicio:
+
+ionic g s services/storage --skip-tests
+
+import { Injectable } from '@angular/core';
+import { Storage } from '@ionic/storage-angular';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class StorageService {
+  private _storage: Storage | null = null;
+  pelis: DetallePelis[] | any = [];
+
+  constructor(private storage: Storage) {}
+
+  /* llamo a la interface para guardar peli */
+  getGuardoPeli(peli: DetallePelis) {
+    this.pelis.push(peli);
+    /* guardamos en el array pelis  y grabamos/guardamos en el storage */
+    this._storage?.set('peliculas', this.pelis);
+    console.log(this.pelis);
+  }
+}
+
+
+*Inyectamos el servicio
+src\app\components\detalle-peli\detalle-peli.component.ts
+
+import { StorageService } from './../../services/storage.service';
+ favoritos() {
+    this.storageServide.getGuardoPeli(this.peli)
+  }
+```
 
 
