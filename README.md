@@ -127,6 +127,8 @@ private modalCtrl: ModalController
 ## ![descarga](https://user-images.githubusercontent.com/71487857/214578135-16d1a768-8961-4099-82ce-43045983b5f6.png)@ionic/storage
 
 ```
+*Dar funcionalidad al btn de favoritos guardando y mostrando con storage
+
  URL
  https://github.com/ionic-team/ionic-storage
 
