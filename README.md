@@ -124,6 +124,53 @@ private modalCtrl: ModalController
     this.modalCtrl.dismiss();
   }
 ```
+## ![descarga](https://user-images.githubusercontent.com/71487857/214578135-16d1a768-8961-4099-82ce-43045983b5f6.png)@ionic/storage
 
+```
+ URL
+ https://github.com/ionic-team/ionic-storage
+
+ *Instalación
+ npm install @ionic/storage
+
+ *Instalar biblioteca Angular
+ npm install @ionic/storage-angular
+
+ *Como es un módulo va en los imports:
+ import { IonicStorageModule } from '@ionic/storage-angular';
+
+@NgModule({
+  imports: [
+    IonicStorageModule.forRoot()
+  ]
+})
+export class AppModule { }
+
+*Creo un servicio:
+import { Injectable } from '@angular/core';
+import { Storage } from '@ionic/storage-angular';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class StorageService {
+  private _storage: Storage | null = null;
+
+  constructor(private storage: Storage) {
+    this.init();
+  }
+
+  async init() {
+    const storage = await this.storage.create();
+    this._storage = storage;
+  }
+ {...}
+}
+
+*Inyectamos el servicio
+src\app\components\article\article.component.ts
+import { StorageService } from '../../services/storage.service';
+{...}
+```
 
 
