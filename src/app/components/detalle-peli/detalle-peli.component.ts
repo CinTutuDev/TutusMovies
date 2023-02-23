@@ -36,7 +36,7 @@ export class DetallePeliComponent implements OnInit {
 
   ngOnInit() {
     /* Verifico si esxite la peli */
-   this.storageServide.getExistePeli(this.id).then(existe => this.estrella = (existe)? 'star' : 'star-outline')
+   this.storageServide.getExistePeli(this.id).then(existe => this.estrella = (existe)? 'star' : 'star-outline');
   /*   console.log('Detalle componet existe', existePeli); */
     /* console.log('el ID', this.id); */
     this.moviesService.getDetallePeli(this.id).subscribe((resp) => {
@@ -57,6 +57,8 @@ export class DetallePeliComponent implements OnInit {
   }
 
   favoritos() {
-    this.storageServide.getGuardoPeli(this.peli);
+  const existe =  this.storageServide.getGuardoPeli(this.peli)
+  this.estrella = (existe)? 'star' : 'star-outline';
+  
   }
 }

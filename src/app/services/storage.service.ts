@@ -46,17 +46,18 @@ export class StorageService {
     if (existePeli) {
       /* Aquí es cuando existe */
       this.pelis = this.pelis.filter((peliFil) => peliFil.id !== peli.id);
-      msg = 'Borrado de favoritos';
+      msg = 'Borrado de favoritos✖️';
     } else {
       /* cuando no existe */
       this.pelis.push(peli);
-      msg = 'Guardado en favoritos';
+      msg = 'Guardado en favoritos✔️';
     }
 
     /* guardamos en el array pelis  y grabamos/guardamos en el storage ;: esto muestra los msg*/
     this.presentToast(msg);
     this.storage.set('peliculas', this.pelis);
     /* console.log(this.pelis); */
+    return !existePeli;
   }
 
   /* cargar favoritos */
