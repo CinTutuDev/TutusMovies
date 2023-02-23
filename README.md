@@ -159,20 +159,27 @@ import { Storage } from '@ionic/storage-angular';
 @Injectable({
   providedIn: 'root',
 })
+
 export class StorageService {
   private _storage: Storage | null = null;
-  pelis: DetallePelis[] | any = [];
+  pelis: DetallePelis[] = [];
 
-  constructor(private storage: Storage) {}
+  constructor(private storage: Storage) {
+    this.initDB();
+  }
+
+  async initDB() {
+    const storage = await this.storage.create();
+    this._storage = storage;
+  }
 
   /* llamo a la interface para guardar peli */
   getGuardoPeli(peli: DetallePelis) {
     this.pelis.push(peli);
     /* guardamos en el array pelis  y grabamos/guardamos en el storage */
-    this._storage?.set('peliculas', this.pelis);
+    this.storage.set('peliculas', this.pelis);
     console.log(this.pelis);
   }
-}
 
 
 *Inyectamos el servicio
