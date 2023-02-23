@@ -18,10 +18,10 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-  <app-poster [posters]="pelis"></app-poster>
+  <app-poster [posters]="peliculas"></app-poster>
   <ion-grid fixed>
     <ion-row>
-      <ion-col size="6" *ngFor="let pelicula of pelis">
+      <ion-col size="6" *ngFor="let pelicula of peliculas">
         <ion-card (click)="detailPeliClick( pelicula.id )">
         <img [src]="pelicula.poster_path | imagen" />
         <ion-card-header>
@@ -36,17 +36,17 @@
   </ion-row>
 </ion-grid>
 
-  <div *ngFor="let genre of genres">
-    <ion-grid fixed>
+  <div *ngFor="let pelicula of pelisFavGenre">
+    <ion-grid fixed *ngIf="pelicula.pelis.length > 0">
       <ion-row>
         <ion-col size="6">
 
-          <h4>{{genre.name}}</h4>
+          <h4>{{pelicula.genero}}</h4>
         </ion-col>
        
       </ion-row>
+      <app-poster [posters]="pelicula.pelis"></app-poster>
     </ion-grid>
-    <app-poster [posters]="pelis"></app-poster>
   </div>
 
 

@@ -7,26 +7,47 @@ import { MoviesService } from '../services/movies.service';
 @Component({
   selector: 'app-tab3',
   templateUrl: 'tab3.page.html',
-  styleUrls: ['tab3.page.scss']
+  styleUrls: ['tab3.page.scss'],
 })
-export class Tab3Page implements OnInit{
+export class Tab3Page implements OnInit {
+  peliculas: DetallePelis[] | any = [];
+  generos: Genre[] = [];
+  pelisFavGenre: any[] = [];
+  pelis: any;
 
-  pelis: DetallePelis[] | any = [];
-  genres: Genre[] = [];
-
-  constructor(private dataLocal: StorageService, private modalCtrl: ModalController, private movieService: MoviesService ) {}
+  constructor(
+    private dataLocal: StorageService,
+    private modalCtrl: ModalController,
+    private movieService: MoviesService
+  ) {}
 
   async ngOnInit() {
-    this.pelis =  await this.dataLocal.getCargarFavoritos();
-    this.genres = await this.movieService.getCargaGenero();
-    console.log(this.pelis);
+    this.peliculas = await this.dataLocal.getCargarFavoritos();
+    this.generos = await this.movieService.getCargaGenero();
+    this.pelisPorGenre(this.generos, this.peliculas);
+    /* console.log(this.pelis); */
   }
-  async detailPeliClick(id:number){
+
+  pelisPorGenre(generos: Genre[], peliculas: DetallePelis[]) {
+    this.pelisFavGenre = [];
+
+    generos.forEach((genero) => {
+      this.pelisFavGenre.push({
+        genero: genero.name,
+        pelis: peliculas.filter((peli) => {
+          return peli.genres?.find((genre) => genre.id === genero.id);
+        }),
+      });
+    });
+
+    console.log(this.pelisFavGenre);
+  }
+
+  async detailPeliClick(id: number) {
     const modal = await this.modalCtrl.create({
       component: DetallePeliComponent,
       componentProps: { id },
     });
     modal.present();
   }
-
 }
