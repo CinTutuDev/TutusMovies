@@ -1,9 +1,10 @@
-import { ResultTMDB, DetallePelis } from './../interface/interfaces';
+import { ResultTMDB, DetallePelis, Genre } from './../interface/interfaces';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 
 import * as moment from 'moment';
+
 
 const url = environment.url;
 const key = environment.apiKey;
@@ -13,6 +14,7 @@ const key = environment.apiKey;
 })
 export class MoviesService {
   private popularPage = 0;
+  generos: Genre[] = [];
 
   constructor(private http: HttpClient) {}
 
@@ -33,7 +35,7 @@ export class MoviesService {
   getCartelera() {
     const startOfMonth = moment().startOf('month').format('YYYY-MM-DD');
     const endOfMonth = moment().endOf('month').format('YYYY-MM-DD');
-  /*   console.log( startOfMonth,'\n',endOfMonth); */
+    /*   console.log( startOfMonth,'\n',endOfMonth); */
     return this.ejecutarQuery<ResultTMDB>(
       `/discover/movie?primary_release_date.gte=${startOfMonth}&primary_release_date.lte=${endOfMonth}`
     );
@@ -49,5 +51,18 @@ export class MoviesService {
   /* https://developers.themoviedb.org/3/search/search-movies */
   getBuscarPeliculas(texto: string) {
     return this.ejecutarQuery(`/search/movie?query=${texto}`);
+  }
+
+  getCargaGenero(): Promise<Genre[]> {
+
+    return new Promise(resolve =>{
+
+      this.ejecutarQuery(`/genre/movie/list?a=1`).subscribe((resp: any) =>{
+        this.generos = resp['genres'];
+        console.log(this.generos);
+        resolve(this.generos);
+      })
+    })
+
   }
 }

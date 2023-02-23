@@ -35,4 +35,19 @@
     </ion-col>
   </ion-row>
 </ion-grid>
+
+  <div *ngFor="let genre of genres">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="6">
+
+          <h4>{{genre.name}}</h4>
+        </ion-col>
+       
+      </ion-row>
+    </ion-grid>
+    <app-poster [posters]="pelis"></app-poster>
+  </div>
+
+
 </ion-content>
