@@ -33,7 +33,7 @@ export class MoviesService {
   getCartelera() {
     const startOfMonth = moment().startOf('month').format('YYYY-MM-DD');
     const endOfMonth = moment().endOf('month').format('YYYY-MM-DD');
-    console.log(startOfMonth, '\n', endOfMonth);
+  /*   console.log( startOfMonth,'\n',endOfMonth); */
     return this.ejecutarQuery<ResultTMDB>(
       `/discover/movie?primary_release_date.gte=${startOfMonth}&primary_release_date.lte=${endOfMonth}`
     );

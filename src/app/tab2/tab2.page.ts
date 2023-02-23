@@ -41,7 +41,7 @@ export class Tab2Page {
       .getBuscarPeliculas(valor)
       //El error unknown resuelto con :any
       .subscribe((res: any) => {
-        console.log(res);
+       /*  console.log(res); */
         this.peliculas = res['results'];
         this.buscando = false;
       });

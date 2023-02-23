@@ -27,3 +27,5 @@ import { DetallePeliComponent } from './detalle-peli/detalle-peli.component';
   imports: [CommonModule, IonicModule, PipesModule],
 })
 export class ComponentsModule {}
+
+export { DetallePeliComponent };
