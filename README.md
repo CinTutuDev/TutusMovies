@@ -21,6 +21,9 @@ https://www.themoviedb.org/
 6º Realizamos en Postman las pruebas y vemos traducción:
 ![postman](https://user-images.githubusercontent.com/71487857/215481676-86fcd1b0-92e5-4673-b08a-2b913b31c83b.png)
 
+* ✔Para sacar solo los generos [API genre](https://api.themoviedb.org/3/genre/movie/list?api_key=f76b1a94f37a496866a10143a5baf98e&language=es&include_image_lenguage=es)
+
+
 
 ## 🎱Crear servicio para interactuar con API
 
