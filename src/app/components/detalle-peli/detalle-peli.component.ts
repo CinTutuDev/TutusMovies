@@ -3,6 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Cast, DetallePelis } from 'src/app/interface/interfaces';
 import { MoviesService } from '../../services/movies.service';
 import { ModalController } from '@ionic/angular';
+import { start } from 'repl';
 
 @Component({
   selector: 'app-detalle-peli',
@@ -15,6 +16,7 @@ export class DetallePeliComponent implements OnInit {
   peli: DetallePelis | any = {};
   actores: Cast[] | any = [];
   parrafo = 150;
+  estrella = 'star-outline';
 
   optionActores = {
     slidesPerView: 3.3,
@@ -33,6 +35,9 @@ export class DetallePeliComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    /* Verifico si esxite la peli */
+   this.storageServide.getExistePeli(this.id).then(existe => this.estrella = (existe)? 'star' : 'star-outline')
+  /*   console.log('Detalle componet existe', existePeli); */
     /* console.log('el ID', this.id); */
     this.moviesService.getDetallePeli(this.id).subscribe((resp) => {
       console.log(resp);

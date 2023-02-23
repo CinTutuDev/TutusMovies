@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
-import { DetallePelis } from '../interface/interfaces';
+import { DetallePelis, Pelis } from '../interface/interfaces';
 import { ToastController } from '@ionic/angular';
 @Injectable({
   providedIn: 'root',
@@ -14,6 +14,7 @@ export class StorageService {
     private toastController: ToastController
   ) {
     this.initDB();
+    this.getCargarFavoritos();
   }
 
   async initDB() {
@@ -52,9 +53,24 @@ export class StorageService {
       msg = 'Guardado en favoritos';
     }
 
-    /* guardamos en el array pelis  y grabamos/guardamos en el storage */
+    /* guardamos en el array pelis  y grabamos/guardamos en el storage ;: esto muestra los msg*/
     this.presentToast(msg);
     this.storage.set('peliculas', this.pelis);
-    console.log(this.pelis);
+    /* console.log(this.pelis); */
+  }
+
+  /* cargar favoritos */
+
+  async getCargarFavoritos() {
+    const peliculasFavorit = await this.storage.get('peliculas');
+    this.pelis = peliculasFavorit || [];
+    return this.pelis;
+  }
+
+  async getExistePeli(id: number) {
+    await this.getCargarFavoritos();
+    const existePeli = this.pelis.find((peli) => peli.id === id);
+    /* si exite retorna true y si no false */
+    return existePeli ? true : false;
   }
 }
