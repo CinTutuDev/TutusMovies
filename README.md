@@ -243,3 +243,10 @@ chrome://inspect/#devices
   <img src="src/assets/imgReadme/favoritos307pxIphone.png" alt="principaL" />
   <img src="src/assets/imgReadme/favoritosAndro307px.png" alt="principaL" />
  </p>
+
+## 🎶 Generador de iconos para PWA
+
+```
+https://tools.crawlink.com/tools/pwa-icon-generator/
+```
+
