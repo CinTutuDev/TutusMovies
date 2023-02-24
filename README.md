@@ -243,3 +243,31 @@ chrome://inspect/#devices
   <img src="src/assets/imgReadme/favoritos307pxIphone.png" alt="principaL" />
   <img src="src/assets/imgReadme/favoritosAndro307px.png" alt="principaL" />
  </p>
+
+## 🎶 Generador de iconos para PWA
+
+```
+https://tools.crawlink.com/tools/pwa-icon-generator/
+```
+## 🚀 Subir proyecto
+```
+URL
+https://firebase.google.com/?hl=es-419
+
+Pg donde explica como subir en firebase
+https://www.youtube.com/watch?v=P4K59gr8sw0&ab_channel=Garajedeideas
+
+1º Crear proyecto
+2º Hosting y comenzar
+3º npm install -g firebase-tools
+4º firebase login
+5º firebase init
+6º Ir a configuracion proyecto en firebase y copiar el ID del proyecto
+7º Abrir terminal :
+firebase use --add 'id'
+firebase deploy
+8º Nos sale rl url a nuestra app🎉
+📢 NOTA❗❗ si se hacen cambios en el proyecto lanzar:
+ionic build --prod --service-worker
+firebase deploy
+```
