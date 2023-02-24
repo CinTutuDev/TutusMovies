@@ -222,7 +222,7 @@ chrome://inspect/#devices
   📸 Páguina principal
 </h2>
 <p align="left"> 
- 
+ <img src="src/assets/imgReadme/principalOphone307png.png" alt="principaL" width="40" height="40"/
 
  </p>
   <br> <br>
