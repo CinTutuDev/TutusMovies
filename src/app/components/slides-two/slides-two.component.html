@@ -3,24 +3,16 @@
   <ion-slide *ngFor="let pares of postersTwo | pares">
     <ion-row>
       <ion-col size="12" *ngFor="let i of pares">
-        <ion-card  (click)="detailPeli(i.id)">
-          <ion-img class="poster"
-                   [src]="i.poster_path | imagen"></ion-img>
-        </ion-card>
-      </ion-col>
-
-   <!--    <ion-col size="12">
-        <ion-card>
+        <ion-card mode="md" (click)="detailPeli(i.id)">
           <ion-img class="poster" [src]="i.poster_path | imagen"></ion-img>
         </ion-card>
-      </ion-col> -->
+      </ion-col>
     </ion-row>
   </ion-slide>
 
   <ion-slide class="btnSlide">
-  <ion-button (click)="onClick()" expand="full" size="large" class="btnMas">
-    <ion-icon slot="icon-only" name="add"></ion-icon>
-  </ion-button>
+    <ion-button (click)="onClick()" expand="full" size="large" class="btnMas">
+      <ion-icon slot="icon-only" name="add"></ion-icon>
+    </ion-button>
   </ion-slide>
-
 </ion-slides>

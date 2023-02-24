@@ -1,5 +1,5 @@
 import { StorageService } from './../services/storage.service';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { DetallePelis, Genre } from '../interface/interfaces';
 import { DetallePeliComponent } from '../components/components.module';
@@ -9,7 +9,7 @@ import { MoviesService } from '../services/movies.service';
   templateUrl: 'tab3.page.html',
   styleUrls: ['tab3.page.scss'],
 })
-export class Tab3Page implements OnInit {
+export class Tab3Page {
   peliculas: DetallePelis[] | any = [];
   generos: Genre[] = [];
   pelisFavGenre: any[] = [];
@@ -21,11 +21,11 @@ export class Tab3Page implements OnInit {
     private movieService: MoviesService
   ) {}
 
-  async ngOnInit() {
+  /* se va a disparar cada vez que se vaya a entrar*/
+  async ionViewWillEnter() {
     this.peliculas = await this.dataLocal.getCargarFavoritos();
     this.generos = await this.movieService.getCargaGenero();
     this.pelisPorGenre(this.generos, this.peliculas);
-    /* console.log(this.pelis); */
   }
 
   pelisPorGenre(generos: Genre[], peliculas: DetallePelis[]) {
