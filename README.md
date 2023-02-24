@@ -215,15 +215,16 @@ More tools --> remote deivces
 chrome://inspect/#devices
 *En Port forwarding... poner el puerto (localhost:8100) y darle a done
 ```
-## Muestra de como queda mi app 
-
+## 🎨 Muestra de como queda mi app 
+<br>
 
   <h2 align="center">
   📸 Páguina principal
 </h2>
-<p align="left"> 
- <img src="src/assets/imgReadme/principalOphone307png.png" alt="principaL" width="40" height="40"/
-
+<br>
+<p align="center"> 
+  <img src="src/assets/imgReadme/principalOphone307png.png" alt="principaL" />
+  <img src="src/assets/imgReadme/TMprincipal307px.png" alt="principaL" />
  </p>
   <br> <br>
 
