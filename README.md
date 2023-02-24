@@ -218,13 +218,28 @@ chrome://inspect/#devices
 ## 🎨 Muestra de como queda mi app 
 <br>
 
-  <h2 align="center">
-  📸 Páguina principal
+<h2 align="center">
+  📸 Página principal/Peliculas
 </h2>
 <br>
 <p align="center"> 
   <img src="src/assets/imgReadme/principalOphone307png.png" alt="principaL" />
   <img src="src/assets/imgReadme/TMprincipal307px.png" alt="principaL" />
+  <img src="src/assets/imgReadme/principalrotation.PNG" alt="principaL" /> 
  </p>
-  <br> <br>
-
+  <br> 
+  <h2 align="center">
+  📸 Página dos/Buscador
+</h2>
+<p align="center"> 
+  <img src="src/assets/imgReadme/buscador307px.png" alt="principaL" />
+  <img src="src/assets/imgReadme/buscadorIphone307px.png" alt="principaL" />
+ </p>
+  <br> 
+  <h2 align="center">
+  📸 Página tres/Favoritos
+</h2>
+<p align="center"> 
+  <img src="src/assets/imgReadme/favoritos307pxIphone.png" alt="principaL" />
+  <img src="src/assets/imgReadme/favoritosAndro307px.png" alt="principaL" />
+ </p>
