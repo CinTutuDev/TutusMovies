@@ -254,6 +254,9 @@ https://tools.crawlink.com/tools/pwa-icon-generator/
 URL
 https://firebase.google.com/?hl=es-419
 
+Pg donde explica como subir en firebase
+https://www.youtube.com/watch?v=P4K59gr8sw0&ab_channel=Garajedeideas
+
 1º Crear proyecto
 2º Hosting y comenzar
 3º npm install -g firebase-tools
