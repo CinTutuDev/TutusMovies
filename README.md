@@ -217,8 +217,13 @@ chrome://inspect/#devices
 ```
 ## Muestra de como queda mi app 
 
-* Paguina prncipal <br>
-![TMprincipal307px](https://user-images.githubusercontent.com/71487857/221151516-1c2d2a2d-ca2c-4501-a174-3fc6a331a16b.png)
 
+  <h2 align="center">
+  📸 Páguina principal
+</h2>
+<p align="left"> 
+ 
 
+ </p>
+  <br> <br>
 
