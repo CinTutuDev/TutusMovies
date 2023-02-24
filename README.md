@@ -215,5 +215,10 @@ More tools --> remote deivces
 chrome://inspect/#devices
 *En Port forwarding... poner el puerto (localhost:8100) y darle a done
 ```
+## Muestra de como queda mi app 
+
+* Paguina prncipal <br>
+![TMprincipal307px](https://user-images.githubusercontent.com/71487857/221151516-1c2d2a2d-ca2c-4501-a174-3fc6a331a16b.png)
+
 
 
