@@ -36,11 +36,14 @@
   </ion-row>
 </ion-grid>
 
+<ion-label >
+  <h4 class="tituloLabelh4 ion-text-center">
+    Pelis seleccionadas por género
+  </h4></ion-label>
   <div *ngFor="let pelicula of pelisFavGenre">
     <ion-grid fixed *ngIf="pelicula.pelis.length > 0">
       <ion-row>
         <ion-col size="6">
-
           <h4>{{pelicula.genero}}</h4>
         </ion-col>
        
